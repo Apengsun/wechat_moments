@@ -1,0 +1,21 @@
+<resources>
+
+    <!--photoPop-->
+    <dimen name="stdPadding">15dip</dimen>
+    <dimen name="gridVerticalPadding">12dip</dimen>
+    <dimen name="gridHorizontalPadding">20dip</dimen>
+    <dimen name="bannerTextPadding">8dip</dimen>
+    <dimen name="indicatorHeight">40dip</dimen>
+    <dimen name="midPadding">20dip</dimen>
+    <dimen name="spiritWidth">40dip</dimen>
+    <dimen name="spiritHeight">85dip</dimen>
+    <dimen name="largePadding">60dip</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_24">24dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+</resources>

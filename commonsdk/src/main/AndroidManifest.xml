@@ -1,0 +1,31 @@
+<manifest package="com.tw.commonsdk"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="com.tw.commonsdk.glide.GlideCache"
+            android:value="GlideCache"/>
+
+        <!-- 此部分代码需要移植到您的 app 下的 manifest，并且 authorities 指定您的包名。例如：com.android.FileProvider -->
+        <!-- 否则使用拍照功能时，会崩溃 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.tw.hedpapp.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/rc_file_path"/>
+        </provider>
+    </application>
+</manifest>
+

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">朋友圈</string>
+    <string name="app_press_exit_again">再按一次退出</string>
+    <string name="app_full_text">全文</string>
+    <string name="app_tuck_up">收起</string>
+
+</resources>

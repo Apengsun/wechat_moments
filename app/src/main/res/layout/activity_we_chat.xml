@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_color_FFFFFF"
+    tools:context=".activity.WeChatActivity"
+    >
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/srf"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <!--        <hlsksk.commonsdk.views.LottieClassicsHeader-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            />-->
+        <!--        <com.scwang.smartrefresh.layout.header.ClassicsHeader-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            />-->
+        <com.tw.commonres.widget.LoadingLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/abl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/public_color_FFFFFF"
+                    >
+
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
+                        android:id="@+id/collapsing_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:contentScrim="@color/public_color_FFFFFF"
+                        app:expandedTitleMarginEnd="64dp"
+                        app:expandedTitleMarginStart="48dp"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                        app:statusBarScrim="@android:color/white"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="262dp"
+                            android:layout_marginBottom="@dimen/public_mar_left_10dp"
+                            android:orientation="vertical"
+                            >
+                            <!--                            app:layout_scrollFlags="scroll|exitUntilCollapsed"-->
+
+                            <ImageView
+                                android:id="@+id/iv_profile"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="14dp"
+                                android:scaleType="centerCrop"
+                                />
+
+                            <ImageView
+                                android:id="@+id/iv_avatar"
+                                android:layout_width="58dp"
+                                android:layout_height="58dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginRight="15dp"
+                                tools:src="@mipmap/public_avar_default"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_nick"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginRight="12dp"
+                                android:layout_marginBottom="22dp"
+                                android:layout_toLeftOf="@id/iv_avatar"
+                                android:textColor="@color/public_black"
+                                android:textSize="12sp"
+                                tools:text="Phoenix"
+                                />
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+
+                    />
+
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </com.tw.commonres.widget.LoadingLayout>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <include layout="@layout/public_include_title"
+        android:visibility="gone"/>
+</FrameLayout>

@@ -1,0 +1,167 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao'
+//apply plugin: 'com.hujiang.android-aspectjx'
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        testInstrumentationRunner rootProject.ext.dependencies["androidJUnitRunner"]
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "boolean", "USE_CANARY", "true"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "boolean", "USE_CANARY", "false"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+//    publishNonDefault true //注意，这里的配置是为了去除gradle对library module默认只编译release buildType的限制
+//    productFlavors {
+//
+//        product {
+//
+//            //个推
+//            manifestPlaceholders = [
+//
+//                    GETUI_APP_ID            : "k8YAziIH1m9QgY8SFg0vS9",
+//                    GETUI_APP_KEY           : "AA3LHYhNlY5Q9AJSXOMc49",
+//                    GETUI_APP_SECRET        : "fQQLFSou7h6cwdXG2khsM",
+//
+//                    RONG_CLOUD_APP_KEY_VALUE: "c9kqb3rdco7wj"
+//            ]
+//
+//            // Bugly
+//            buildConfigField "String", "BUGLY_APP_ID", '"7c5f018f2b"'
+//
+//            //服务器地址
+//            buildConfigField "String", "API_BASE_URL_DEAULT", '"https://devaccount.houyicloud.com/api/"'
+//            buildConfigField "String", "IMG_UPLOAD_URL", '"https://devaccount.houyicloud.com/files"'
+//
+//            //RTC
+//            buildConfigField "int", "TRTC_APPID", "1400143309"
+//
+//        }
+//
+//        preview {
+//
+//            //个推
+//            manifestPlaceholders = [
+//
+//                    GETUI_APP_ID            : "jKLNyu7yzV86kLHBTflte4",
+//                    GETUI_APP_KEY           : "V8fSulYjys7jqf8QSWnAE",
+//                    GETUI_APP_SECRET        : "fIL7TWnWBP67ICh5fRdJ88",
+//
+//                    RONG_CLOUD_APP_KEY_VALUE: "pkfcgjstpoma8"
+//            ]
+//
+//            // Bugly
+//            buildConfigField "String", "BUGLY_APP_ID", '"9918f0c3e4"'
+//
+//            //服务器地址
+//            //服务器地址
+//            buildConfigField "String", "API_BASE_URL_DEAULT", '"https://betawww.houyicloud.com/"'
+//            buildConfigField "String", "IMG_UPLOAD_URL", '"https://betaupload.houyicloud.com/files"'
+//
+//            //RTC
+//            buildConfigField "int", "TRTC_APPID", "1400188153"
+//        }
+//
+//        develop {
+//
+//            //个推
+//            manifestPlaceholders = [
+//                    GETUI_APP_ID            : "jKLNyu7yzV86kLHBTflte4",
+//                    GETUI_APP_KEY           : "V8fSulYjys7jqf8QSWnAE",
+//                    GETUI_APP_SECRET        : "fIL7TWnWBP67ICh5fRdJ88",
+//
+//                    RONG_CLOUD_APP_KEY_VALUE: "k51hidwqk4h4b"
+//            ]
+//
+//            // Bugly
+//            buildConfigField "String", "BUGLY_APP_ID", '"9918f0c3e4"'
+//
+//            //服务器地址
+//            buildConfigField "String", "API_BASE_URL_DEAULT", '"https://devwww.houyicloud.com/"'
+//            buildConfigField "String", "IMG_UPLOAD_URL", '"https://betaupload.houyicloud.com/files"'
+//
+//            //RTC
+//            buildConfigField "int", "TRTC_APPID", "1400188153"
+//
+//        }
+//
+//    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    //support
+    api(rootProject.ext.dependencies["support-v4"]) {
+        exclude module: 'support-annotations'
+    }
+    api(rootProject.ext.dependencies["appcompat-v7"]) {
+        exclude module: 'support-annotations'
+    }
+    api rootProject.ext.dependencies["design"]
+    api(rootProject.ext.dependencies["recyclerview-v7"]) {
+        exclude module: 'support-annotations'
+    }
+    api(rootProject.ext.dependencies["constraint-layout"]) {
+        exclude module: 'support-annotations'
+    }
+    api rootProject.ext.dependencies["annotations"]
+    api(rootProject.ext.dependencies["butterknife"]) {
+        exclude module: 'support-annotations'
+        exclude module: 'support-compat'
+    }
+    api(rootProject.ext.dependencies["glide"]) {
+        exclude module: 'glide-compiler'
+    }
+    //tools
+    api rootProject.ext.dependencies["androideventbus"]
+    api(rootProject.ext.dependencies["arouter"]) {
+        exclude module: 'support-v4'
+        exclude module: 'support-annotations'
+    }
+    //    api rootProject.ext.dependencies["takephoto"]//测试去掉和IM provider冲突
+    api rootProject.ext.dependencies["autosize"]
+    api(rootProject.ext.dependencies["smart-refresh"]) {
+        exclude group: "com.android.support"
+    }
+    api(rootProject.ext.dependencies["smart-refresh-header"]) {
+        exclude group: "com.android.support"
+    }
+    api rootProject.ext.dependencies["base-recyclerview-adapter-helper"]
+    //network
+    api rootProject.ext.dependencies["OkGo"]
+    api rootProject.ext.dependencies["OkServer"]
+    api rootProject.ext.dependencies["multidex"]
+    api project(":ninegridview")
+//    api rootProject.ext.dependencies["ninegridview"]
+    api rootProject.ext.dependencies['imagepicker']
+    //因为 CommonSDK依赖了 commonservice, 所以其他业务模块只依赖 CommonSDK，不用再写依赖commonservice
+    api project(':commonservice')
+    api rootProject.ext.dependencies['gson']
+    api rootProject.ext.dependencies['lottie']
+    api rootProject.ext.dependencies['aspectjx']
+    api rootProject.ext.dependencies['support-design']
+}

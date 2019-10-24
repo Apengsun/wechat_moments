@@ -1,0 +1,28 @@
+<resources>
+    <string name="public_app_name">朋友圈</string>
+    <string name="public_module_name">app</string>
+    <string name="public_loading">加载中</string>
+
+
+    <string name="public_go_publish">去发布</string>
+    <string name="public_go_attention">去关注</string>
+    <string name="public_reload">重新加载</string>
+    <string name="public_go_back">返回</string>
+
+    <string name="public_empty_no_data">暂无数据</string>
+    <string name="public_waiting_tip">您所在的产业数据正在完善 预计近期上线...</string>
+    <string name="public_empty_tip_publish">您还没有相关的数据,发布一条试试看， 可能会有意想不到的收获哦！</string>
+    <string name="public_empty_tip_attention">您还没有关注任何内容</string>
+    <string name="public_net_tip">无网络</string>
+    <string name="public_empty_no_collection">暂无收藏</string>
+    <string name="public_empty_no_request">暂无需求</string>
+    <string name="public_empty_no_resource">暂无资源</string>
+
+    <string name="public_reminder">提示</string>
+    <string name="public_konwn">知道了</string>
+
+
+    <string name="public_business_publish_focus">+ 关注</string>
+    <string name="public_business_publish_already_focus">已关注</string>
+
+</resources>

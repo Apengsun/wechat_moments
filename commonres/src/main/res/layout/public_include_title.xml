@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/public_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:background="@color/public_color_EDEDED"
+    android:elevation="1dp"
+    android:orientation="vertical"
+    >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        />
+
+    <TextView
+        android:id="@+id/public_toolbar_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/public_app_name"
+        android:textColor="@color/public_black"
+        android:textSize="@dimen/public_font_16sp"
+        />
+
+</LinearLayout>

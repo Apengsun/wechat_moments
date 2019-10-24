@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp"
+    >
+
+    <TextView
+        android:id="@+id/tv_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_avatar"
+        android:textColor="@color/public_color_546C99"
+        android:textSize="13sp"
+        tools:text="甲酸钠"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_nick"
+        android:layout_alignLeft="@id/tv_nick"
+        android:lineSpacingExtra="3dp"
+        android:textColor="@color/public_color_181818"
+        android:textSize="13sp"
+        tools:text="天津天雅万印毯业科技有限公司天津天雅万印毯业科技有限公司天津天雅万印毯业科技有限公司天津天雅万印毯业科技有限公司"
+        />
+
+
+</LinearLayout>
+
+

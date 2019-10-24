@@ -1,0 +1,78 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="public_AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/public_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/public_colorPrimaryDark</item>
+        <item name="colorAccent">@color/public_color_A52B2F</item>
+        <item name="android:windowAnimationStyle">@style/public_Activity_Animation</item>
+<!--        <item name="android:windowAnimationStyle">@style/public_popup_anim</item>-->
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+        <!-- Android 6.0以上 状态栏字色和图标为浅黑色-->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+d
+    <style name="public_theme_begin_background" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowAnimationStyle">@style/public_popup_anim</item>
+        <item name="android:background">@drawable/loading_1080_1920</item>
+    </style>
+
+    <style name="public_popup_anim" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/public_push_in_alpha</item>
+        <item name="android:windowExitAnimation">@anim/public_push_out_alpha</item>
+    </style>
+
+    <style name="public_Activity_Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/public_translate_right_to_center</item>
+        <item name="android:activityOpenExitAnimation">@anim/public_translate_center_to_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/public_translate_left_to_center</item>
+        <item name="android:activityCloseExitAnimation">@anim/public_translate_center_to_right</item>
+    </style>
+
+    <style name="public_dialog_inout_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/public_dialog_enter</item>
+        //进入时的动画
+        <item name="android:windowExitAnimation">@anim/public_dialog_exit</item>
+        //退出时的动画
+    </style>
+    <style name="public_dialog_progress" parent="android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="public_AlertDialog" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+        <!-- 这里设置背景为透明，为了隐藏边框 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 这里是修改顶部标题背景颜色，具体颜色自己定，可以是图片 -->
+        <item name="android:topDark">@color/public_white</item>
+        <!-- 这里是修改内容区域背景颜色 -->
+        <item name="android:centerDark">@color/public_white</item>
+        <item name="android:windowAnimationStyle">@android:color/transparent</item>
+    </style>
+
+    <!--设置AlertDialog背景透明-->
+    <style name="public_no_backgroung_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
+    </style>
+
+    <style name="public_fullscreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>

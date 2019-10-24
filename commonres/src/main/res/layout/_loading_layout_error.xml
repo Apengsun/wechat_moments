@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_white">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="150dp">
+
+        <ImageView
+            android:id="@id/error_image"
+            android:layout_width="@dimen/public_width_80dp"
+            android:layout_height="@dimen/public_height_80dp"
+            android:src="@drawable/public_icon_no_net" />
+
+        <TextView
+            android:id="@id/error_text"
+            android:layout_width="259dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center_horizontal"
+            android:text="@string/public_net_tip"
+            android:textColor="@color/public_color_999999"
+            android:textSize="@dimen/public_font_15sp" />
+
+        <TextView
+            android:id="@id/retry_button"
+            android:layout_width="140dp"
+            android:layout_height="44dp"
+            android:background="@drawable/public_shape_red_corner"
+            android:gravity="center"
+            android:text="@string/public_reload"
+            android:textColor="@color/public_color_A52B2F"
+            android:textSize="@dimen/public_font_18sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
