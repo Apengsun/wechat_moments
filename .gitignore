@@ -36,11 +36,6 @@ captures/
 *.iml
 .idea
 
-# Keystore files
-#*.jks
-
 # MacOS
 .DS_Store
-
-gradle.properties
 local.properties
